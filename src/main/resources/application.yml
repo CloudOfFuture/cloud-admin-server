@@ -10,6 +10,23 @@ spring:
         endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti
       username: "${security.user.name}"
       password: "${security.user.password}"
+      notify:
+        slack:
+          enabled: true
+        mail:
+          to: 602327249@qq.com
+          from: 769558579@qq.com
+  mail:
+    host: smtp.qq.com
+    username: 769558579@qq.com
+    password: asrkrmenwufgbddg
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 #      client:
 #        metadata:
 #          user.name: "${security.user.name}"
@@ -21,3 +38,5 @@ security:
   user:
     name: user
     password: pass
+info:
+  version: @project.version@
