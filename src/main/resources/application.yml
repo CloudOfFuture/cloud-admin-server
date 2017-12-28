@@ -6,6 +6,18 @@ spring:
   boot:
     admin:
       url: http://localhost:${server.port}
+      routes:
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti
+      username: "${security.user.name}"
+      password: "${security.user.password}"
+#      client:
+#        metadata:
+#          user.name: "${security.user.name}"
+#          user.password: "${security.user.password}"
 management:
   security:
     enabled: false
+security:
+  user:
+    name: user
+    password: pass
